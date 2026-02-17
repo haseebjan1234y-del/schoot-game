@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump Obby - Squla Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen active">
+        <div class="start-container">
+            <h1>🎮 JUMP OBBY</h1>
+            <p class="subtitle">Spring over de platforms!</p>
+            <div class="difficulty-select">
+                <button class="difficulty-btn" data-difficulty="easy">⭐ Easy</button>
+                <button class="difficulty-btn" data-difficulty="normal">⭐⭐ Normal</button>
+                <button class="difficulty-btn" data-difficulty="hard">⭐⭐⭐ Hard</button>
+            </div>
+            <input type="text" id="playerNameInput" placeholder="Jouw naam..." maxlength="15">
+            <button id="startBtn" class="btn-start">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        <div id="canvas-container"></div>
+        
+        <!-- Game UI -->
+        <div class="game-ui">
+            <div class="top-bar">
+                <div class="player-info">
+                    <span>Speler: <strong id="playerName">Player</strong></span>
+                    <span>Level: <strong id="levelNumber">1</strong></span>
+                </div>
+                <div class="timer">
+                    <span>⏱️ <strong id="timer">0:00</strong></span>
+                </div>
+            </div>
+            
+            <div class="middle-info">
+                <div class="checkpoint-display">
+                    Checkpoint: <span id="checkpointCount">0</span>/10
+                </div>
+            </div>
+            
+            <div class="bottom-bar">
+                <div class="controls">
+                    <p>WASD = Bewegen | SPACE = Springen | ↑↓ = Kijken</p>
+                </div>
+                <button id="restartBtn" class="btn-control">🔄 Restart</button>
+            </div>
+        </div>
+
+        <!-- Falls counter -->
+        <div class="falls-counter">
+            Falls: <span id="fallCount">0</span>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="screen">
+        <div class="gameover-container">
+            <h1 id="gameoverTitle">LEVEL VOLTOOID! 🎉</h1>
+            <div class="gameover-stats">
+                <p>Speler: <strong id="finalPlayerName">Player</strong></p>
+                <p>Tijd: <strong id="finalTime">0:00</strong></p>
+                <p>Vallingen: <strong id="finalFalls">0</strong></p>
+                <p>Level: <strong id="finalLevel">1</strong></p>
+            </div>
+            <div class="gameover-buttons">
+                <button id="nextLevelBtn" class="btn-primary">Volgende Level</button>
+                <button id="retryBtn" class="btn-secondary">Opnieuw Proberen</button>
+                <button id="menuBtn" class="btn-secondary">Terug naar Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
